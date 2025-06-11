@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { providePrimeNG } from 'primeng/config';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +16,9 @@ export class App {
   name = 'prime parts';
 }
 
-bootstrapApplication(App);
+bootstrapApplication(App,{
+  providers: [
+    provideAnimationsAsync(),
+    providePrimeNG({})
+]
+});
